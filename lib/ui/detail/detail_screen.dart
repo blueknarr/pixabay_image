@@ -4,7 +4,8 @@ import 'package:pixabay_image/ui/search/search_view_model.dart';
 import 'package:provider/provider.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+  Pixabay pixabay;
+  DetailScreen({super.key, required this.pixabay});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +18,9 @@ class DetailScreen extends StatelessWidget {
       body: Column(
         children: [
           Hero(
-            tag: viewModel.images[viewModel.tagIndex].id,
+            tag: pixabay.id, //viewModel.images[viewModel.tagIndex].id,
             child: Image.network(
-              viewModel.images[viewModel.tagIndex].imgUrl,
+              pixabay.imgUrl, //viewModel.images[viewModel.tagIndex].imgUrl,
               fit: BoxFit.cover,
             ),
           ),

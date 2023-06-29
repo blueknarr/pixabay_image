@@ -18,7 +18,7 @@ final router = GoRouter(
       path: '/detail',
       builder: (context, state) => ChangeNotifierProvider(
         create: (create) => SearchViewModel(),
-        child: const DetailScreen(),
+        child: DetailScreen(pixabay: state.extra as Pixabay),
       ),
     ),
   ],
